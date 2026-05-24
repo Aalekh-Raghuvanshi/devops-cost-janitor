@@ -1,6 +1,6 @@
 # AWS region where resources will be created.
 # Even though LocalStack runs locally, Terraform still expects a region value.
-variable "region" {
+variable "aws_region" {
   description = "AWS region used by Terraform and LocalStack"
   type        = string
   default     = "us-east-1"
@@ -23,16 +23,16 @@ variable "environment" {
 variable "owner" {
   description = "Person or team responsible for the infrastructure"
   type        = string
-  default     = "Pranshu"
+  default     = "Aalekh"
 }
 
 # CIDR block allowed to SSH into EC2 instances.
 # 0.0.0.0/0 means anyone on the internet can attempt SSH access.
 # For production systems, restrict this to trusted IP ranges.
-variable "ssh_allowed_cidr" {
-  description = "CIDR range allowed to access EC2 instances using SSH"
-  type        = string
-  default     = "0.0.0.0/0"
+variable "allowed_ssh_cidrs" {
+  description = "CIDR ranges allowed to access EC2 instances using SSH"
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
 }
 
 # EC2 instance size/type.
@@ -45,7 +45,7 @@ variable "instance_type" {
 
 # Main project name used in naming and tagging resources.
 # Helps identify resources belonging to this assignment.
-variable "project_name" {
+variable "project" {
   description = "Project name used for naming and tagging AWS resources"
   type        = string
   default     = "cost-janitor"
@@ -112,6 +112,14 @@ variable "s3_bucket_name" {
   description = "S3 bucket used for reports and logs"
   type        = string
   default     = "cost-janitor-reports"
+}
+
+# LocalStack can time out while the AWS provider waits for S3 lifecycle reads.
+# Keep this disabled for local runs; enable it when targeting real AWS.
+variable "enable_s3_lifecycle_configuration" {
+  description = "Whether to create the S3 lifecycle configuration resource"
+  type        = bool
+  default     = false
 }
 
 # Number of days before old object versions expire.

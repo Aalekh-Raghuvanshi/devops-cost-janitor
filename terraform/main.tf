@@ -122,11 +122,17 @@ resource "aws_s3_bucket_versioning" "reports" {
 # Adds lifecycle policy for old object versions.
 # This helps clean up older versions after a defined number of days.
 resource "aws_s3_bucket_lifecycle_configuration" "reports" {
+  count = var.enable_s3_lifecycle_configuration ? 1 : 0
+
   bucket = aws_s3_bucket.reports.id
 
   rule {
     id     = "expire-old-versions"
     status = "Enabled"
+
+    filter {
+      prefix = ""
+    }
 
     noncurrent_version_expiration {
       noncurrent_days = var.s3_noncurrent_version_expiration_days
