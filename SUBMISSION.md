@@ -5,21 +5,21 @@
 
 **Date submitted:** 24th May 2026
 
-**Hours spent (approximate):** 12 - 15 hours
+**Hours spent (approximate):** 15 - 20 hours
 
 ## Deliverables checklist
-- [ ] Part A: Terraform code under /terraform applies cleanly on LocalStack
-- [ ] Part A: `terraform validate` and `terraform fmt -check` both pass
-- [ ] Part B: Janitor script runs in --dry-run mode and produces report.json
-- [ ] Part B: GitHub Actions workflow runs green on a fresh PR
-- [ ] Part B: --delete mode respects Protected=true tag
-- [ ] Part C: DESIGN.md is present and within 2 pages
-- [ ] Walkthrough video link below is accessible (unlisted is fine)
+- [x] Part A: Terraform code under /terraform applies cleanly on LocalStack
+- [x] Part A: `terraform validate` and `terraform fmt -check` both pass
+- [x] Part B: Janitor script runs in --dry-run mode and produces report.json
+- [x] Part B: GitHub Actions workflow runs green on a fresh PR
+- [x] Part B: --delete mode respects Protected=true tag
+- [x] Part C: DESIGN.md is present and within 2 pages
+- [x] Walkthrough video link below is accessible (unlisted is fine)
 
 ## Walkthrough video
-Link (Loom / YouTube unlisted / Google Drive):
+Link (Loom / YouTube unlisted / Google Drive): https://www.youtube.com/watch?v=2AI0GlkwyX4&t=1s
 
-Length: max 5 minutes
+Length: 4 minutes
 
 ## Sample report
 Sample reports are available at:

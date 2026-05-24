@@ -15,6 +15,8 @@ The solution includes:
 - GitHub Actions CI/CD workflow
 - Automated PR feedback through Markdown reporting
 
+**Walkthrough Video Link :** https://www.youtube.com/watch?v=2AI0GlkwyX4&t=1s
+
 ---
 
 ## How to run locally
@@ -34,8 +36,8 @@ Install the following tools:
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_NAME>
+git clone https://github.com/Aalekh-Raghuvanshi/devops-cost-janitor
+cd devops-cost-janitor
 ```
 
 ---
